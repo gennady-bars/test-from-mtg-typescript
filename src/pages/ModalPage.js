@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { CSSTransition } from "react-transition-group";
 import { connect } from "react-redux";
 import styles from  "./ModalPage.module.css";
+import transition from '../transitions/transition.module.css'
+
 import Modal from "../components/Modal/Modal";
 import Alert from "../components/Modal/Alert";
 import { setAlert, setModal } from "../redux/actions/modalActions";
@@ -31,7 +33,7 @@ class ModalPage extends Component {
         <CSSTransition
           in={isOpen}
           timeout={200}
-          classNames="modal"
+          classNames={transition}
           unmountOnExit
           mountOnEnter
         >
@@ -43,7 +45,7 @@ class ModalPage extends Component {
         <CSSTransition
           in={isShown}
           timeout={200}
-          classNames="alert"
+          classNames={transition}
           unmountOnExit
           mountOnEnter
         >

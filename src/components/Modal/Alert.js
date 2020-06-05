@@ -1,11 +1,11 @@
 import React from 'react'
-import './Alert.css'
+import styles from './Alert.module.css'
 
 const Alert = ({onCloseAlert}) => {
     return (
-        <div className='Alert'>
+        <div className={styles.Alert}>
             <p>OK</p>
-            <span onClick={onCloseAlert} className='close-btn'>x</span>
+            <span onClick={onCloseAlert} className={styles['close-btn']}>x</span>
         </div>
     )
 }

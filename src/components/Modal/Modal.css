@@ -10,7 +10,7 @@
 
 }
 
-.modal-enter {
+/* .modal-enter {
   opacity: 0;
 }
 .modal-enter-active {
@@ -23,7 +23,7 @@
 .modal-exit-active {
   opacity: 0;
   transition: opacity 200ms;
-}
+} */
 
 @media screen and (max-width: 480px) {
   .Modal {

@@ -16,7 +16,7 @@
   cursor: pointer;
 }
 
-.alert-enter {
+/* .alert-enter {
   opacity: 0;
 }
 .alert-enter-active {
@@ -29,7 +29,7 @@
 .alert-exit-active {
   opacity: 0;
   transition: opacity 200ms;
-}
+} */
 
 @media screen and (max-width: 480px) {
   .Alert {
