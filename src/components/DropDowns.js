@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import FileContents from "./FileContents";
 import { getContents } from "../redux/actions/filesActions";
+import styles from './DropDowns.module.css'
 
 class DropDowns extends Component {
   componentDidMount() {
@@ -18,12 +19,12 @@ class DropDowns extends Component {
     const { url, files, activeFile, loading, error } = this.props;
 
     return (
-      <div className="container">
-        <div className="dropdown">
-          <button className="show-btn">
+      <div className={styles.container}>
+        <div className={styles.dropdown}>
+          <button className={styles["show-btn"]}>
             {(activeFile && `Выбран ${activeFile.name}`) || "Выбери файл"}
           </button>
-          <div className="dropdown-child">
+          <div className={styles["dropdown-child"]}>
             {files.map((file) => (
               <Link to={`${url}/${file.name}`} key={file.id}>
                 {file.name}
@@ -31,8 +32,8 @@ class DropDowns extends Component {
             ))}
           </div>
         </div>
-        <div className="dropdown">
-          <button className="show-btn">
+        <div className={styles.dropdown}>
+          <button className={styles["show-btn"]}>
             Содержимое файла {activeFile && activeFile.name}
           </button>
 

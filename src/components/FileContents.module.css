@@ -1,0 +1,12 @@
+.contents {
+  position: absolute;
+  background-color: black;
+  min-width: 165px;
+  width: 300px;
+}
+
+.contents p {
+  color: white;
+  padding: 10px;
+  text-align: justify;
+}

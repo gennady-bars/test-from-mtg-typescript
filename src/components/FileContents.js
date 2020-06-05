@@ -1,4 +1,5 @@
 import React from "react";
+import styles from './FileContents.module.css'
 
 const FileContents = ({ activeFile, loading, error }) => {
   const contents = loading
@@ -10,7 +11,7 @@ const FileContents = ({ activeFile, loading, error }) => {
     : 'Выберите файл';
 
   return (
-    <div className="contents-child">
+    <div className={styles.contents}>
       <p>{contents}</p>
     </div>
   );

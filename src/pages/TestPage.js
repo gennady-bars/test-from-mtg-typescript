@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import "./TestPage.css";
+import styles from  "./TestPage.module.css";
 import DropDowns from "../components/DropDowns";
 import { getFiles } from "../redux/actions/filesActions";
 
@@ -20,7 +20,7 @@ class TestPage extends Component {
       return <h1>Что-то пошло не так... Ошибка: {error}</h1>
     }
     return (
-      <div className='TestPage'>
+      <div className={styles.TestPage}>
         <h1>Тестовое Задание (DropDowns)</h1>
 
         <Switch>

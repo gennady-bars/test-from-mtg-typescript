@@ -1,4 +1,4 @@
-.modal {
+.Modal {
   display: block;
   position: fixed;
   top: 50%;
@@ -26,7 +26,7 @@
 }
 
 @media screen and (max-width: 480px) {
-  .modal {
+  .Modal {
     width: 80%;
     margin-left: 2%;
     margin-right: 5%;
