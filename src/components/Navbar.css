@@ -1,0 +1,46 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: bisque;
+  box-sizing: border-box;
+}
+
+.Navbar a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.Navbar a:hover {
+  color: purple;
+}
+
+.Navbar .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3rem;
+}
+
+.Navbar ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin-right: 3rem;
+}
+
+.Navbar ul li {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .Navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Navbar .logo {
+    margin-left: 0px;
+  }
+}

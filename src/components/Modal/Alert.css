@@ -1,0 +1,40 @@
+.Alert {
+  position: fixed;
+  width: 75%;
+  border: 1px solid black;
+  padding: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: #fff3ce;
+  text-align: center;
+}
+
+.Alert .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.alert-enter {
+  opacity: 0;
+}
+.alert-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.alert-exit {
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+@media screen and (max-width: 480px) {
+  .Alert {
+    width: 80%;
+    margin-left: 2%;
+    margin-right: 5%;
+  }
+}

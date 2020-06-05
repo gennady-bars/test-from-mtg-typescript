@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  
+}
+
+.show-btn {
+  background-color: bisque;
+  color: black;
+  border: none;
+  cursor: pointer;
+  padding:20px;
+  margin-top:20px;
+}
+.dropdown {
+  position: relative;
+  margin-right: 1rem;
+}
+.dropdown-child {
+  display: none;
+  position: absolute;
+  background-color: black;
+  width: 125px;
+}
+.contents-child {
+  position: absolute;
+  background-color: black;
+  min-width: 165px;
+  width: 300px;
+}
+
+.contents-child p {
+  color: white;
+  padding: 10px;
+  text-align: justify;
+}
+
+.dropdown-child a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown:hover .dropdown-child, .dropdown:hover .contents-child {
+  display: block;
+  z-index: 9999;
+
+}
+
+/* @media screen and (min-device-width: 1600px) {
+ }
+ @media screen and (min-device-width: 1280px) {
+ } */
+ @media screen and (max-width: 480px) {
+   .container {
+     flex-direction: column;
+   }
+ }
