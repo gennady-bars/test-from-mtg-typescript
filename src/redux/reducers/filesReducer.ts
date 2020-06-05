@@ -1,3 +1,4 @@
+import { FileType, AddressType } from './../../types';
 import {
   SET_FILES,
   SET_LOADING_FILES,
@@ -7,17 +8,7 @@ import {
   GET_CONTENTS_ERROR,
 } from "../actions/actionTypes";
 
-type AddressType = {
-  loading: boolean;
-  error: any;
-  file: FileType | null | undefined;
-};
 
-type FileType = {
-  id: number;
-  name: string;
-  contents?: string;
-};
 
 const initialState = {
   files: [] as Array<FileType>,

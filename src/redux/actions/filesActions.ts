@@ -1,3 +1,5 @@
+import { FileType } from './../../types';
+import { Dispatch } from "redux";
 import {
   SET_FILES,
   SET_LOADING_FILES,
@@ -47,7 +49,7 @@ const FAKE_DATABASE = {
 };
 
 export const getFiles = () => {
-  return async (dispatch: Function) => {
+  return async (dispatch: Dispatch) => {
     dispatch(setLoadingFiles());
     try {
       // axios-запрос по какому-то API
@@ -63,13 +65,13 @@ export const getFiles = () => {
 };
 
 export const getContents = (fileName: string) => {
-  return async (dispatch: Function) => {
+  return async (dispatch: Dispatch) => {
     dispatch(setLoadingContents());
 
     try {
       // axios-запрос по какому-то API
       // const result = await axios.get(url, body)
-      await new Promise((resolve, reject) => {
+      await new Promise<FileType>((resolve, reject) => {
         const file = FAKE_DATABASE.contents.find(
           ({ name }) => name === fileName
         );
@@ -81,34 +83,35 @@ export const getContents = (fileName: string) => {
   };
 };
 
-type SetLoadingContentsActionType = {
-  type: typeof SET_LOADING_CONTENTS;
-};
+type SetLoadingContentsActionType = { type: typeof SET_LOADING_CONTENTS };
 export const setLoadingContents = (): SetLoadingContentsActionType => {
   return { type: SET_LOADING_CONTENTS };
 };
 
 type GetContentsSuccessActionType = {
   type: typeof GET_CONTENTS_SUCCESS;
-  file: any;
+  file: FileType;
 };
-
-export const getContentsSuccess = (file: any): GetContentsSuccessActionType => {
+export const getContentsSuccess = (file: FileType): GetContentsSuccessActionType => {
   return { type: GET_CONTENTS_SUCCESS, file };
-};
+}; 
 
-export const getContentsError = (error: any) => {
+type GetContentsErrorActionType = { type: typeof GET_CONTENTS_ERROR, error: any }
+export const getContentsError = (error: any): GetContentsErrorActionType => {
   return { type: GET_CONTENTS_ERROR, error };
 };
 
-export const setFiles = (files: Array<object>) => {
+type SetFilesActionType = { type: typeof SET_FILES, files: Array<FileType> }
+export const setFiles = (files: Array<FileType>): SetFilesActionType => {
   return { type: SET_FILES, files };
 };
 
-export const setLoadingFiles = () => {
+type SetLoadingFilesActionType = { type: typeof SET_LOADING_FILES }
+export const setLoadingFiles = (): SetLoadingFilesActionType => {
   return { type: SET_LOADING_FILES };
 };
 
-export const getFilesError = (error: any) => {
+type GetFilesErrorActionType = { type: typeof GET_FILES_ERROR, error: any }
+export const getFilesError = (error: any): GetFilesErrorActionType => {
   return { type: GET_FILES_ERROR, error };
 };
