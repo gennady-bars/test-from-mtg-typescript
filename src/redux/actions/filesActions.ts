@@ -52,7 +52,7 @@ export const getFiles = () => {
     try {
       // axios-запрос по какому-то API
       // const result = await axios.get(url, body)
-      const files = FAKE_DATABASE.files
+      const files = FAKE_DATABASE.files;
       setTimeout(() => {
         dispatch(setFiles(files));
       }, 2000);
@@ -81,14 +81,19 @@ export const getContents = (fileName: string) => {
   };
 };
 
-export type SetLoadingContentsActionType = {
-  type: typeof SET_LOADING_CONTENTS
-}
+type SetLoadingContentsActionType = {
+  type: typeof SET_LOADING_CONTENTS;
+};
 export const setLoadingContents = (): SetLoadingContentsActionType => {
   return { type: SET_LOADING_CONTENTS };
 };
 
-export const getContentsSuccess = (file: any) => {
+type GetContentsSuccessActionType = {
+  type: typeof GET_CONTENTS_SUCCESS;
+  file: any;
+};
+
+export const getContentsSuccess = (file: any): GetContentsSuccessActionType => {
   return { type: GET_CONTENTS_SUCCESS, file };
 };
 

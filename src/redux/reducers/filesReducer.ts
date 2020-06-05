@@ -10,11 +10,17 @@ import {
 type AddressType = {
   loading: boolean;
   error: any;
-  file: object | null;
+  file: FileType | null | undefined;
+};
+
+type FileType = {
+  id: number;
+  name: string;
+  contents?: string;
 };
 
 const initialState = {
-  files: [] as Array<object>,
+  files: [] as Array<FileType>,
   loading: true,
   error: null as any,
   activeFile: {
