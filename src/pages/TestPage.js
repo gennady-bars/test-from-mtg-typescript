@@ -20,7 +20,7 @@ class TestPage extends Component {
       return <h1>Что-то пошло не так... Ошибка: {error}</h1>
     }
     return (
-      <div>
+      <div className='TestPage'>
         <h1>Тестовое Задание (DropDowns)</h1>
 
         <Switch>

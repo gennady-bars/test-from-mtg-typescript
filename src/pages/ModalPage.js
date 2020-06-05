@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { CSSTransition } from "react-transition-group";
 import { connect } from "react-redux";
-import "./ModalPage.css";
+import styles from  "./ModalPage.module.css";
 import Modal from "../components/Modal/Modal";
 import Alert from "../components/Modal/Alert";
 import { setAlert, setModal } from "../redux/actions/modalActions";
@@ -26,7 +26,7 @@ class ModalPage extends Component {
   render() {
     const {isOpen, isShown, setModal, setAlert} = this.props
     return (
-      <div className="ModalPage">
+      <div className={styles.ModalPage}>
         <button onClick={() => setModal(true)}>Нажми на меня</button>
         <CSSTransition
           in={isOpen}

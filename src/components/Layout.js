@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import HomePage from "../pages/HomePage";
 import Navbar from "./Navbar";
-import "./Layout.css";
+import styles from  "./Layout.module.css";
 import { Switch, Route } from "react-router-dom";
 import NotFound from "./NotFound";
 import Login from "./Login";
@@ -14,7 +14,7 @@ export default class Layout extends Component {
     return (
       <Fragment>
         <Navbar />
-        <div className="Layout">
+        <div className={styles.Layout}>
           <Switch>
             <Route path="/" exact component={HomePage} />
             <Route path="/test" component={TestPage} />

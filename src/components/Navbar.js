@@ -1,11 +1,11 @@
 import React from 'react'
-import './Navbar.css'
+import styles from  './Navbar.module.css'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <div className='Navbar'>
-            <span className='logo'><Link to='/'>LOGO</Link></span>
+        <div className={styles.Navbar}>
+            <span className={styles.logo}><Link to='/'>LOGO</Link></span>
             <ul>
               <li><Link to='/modal'>Modal</Link></li>
               <li><Link to='/test'>DropDowns</Link></li>
