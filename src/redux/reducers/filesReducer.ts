@@ -24,9 +24,9 @@ const initialState = {
   } as AddressType,
 };
 
-export type initialStateType = typeof initialState;
+export type InitialStateType = typeof initialState;
 
-const filesReducer = (state = initialState, action: any) => {
+const filesReducer = (state = initialState, action: any): InitialStateType => {
   switch (action.type) {
     case SET_FILES:
       return { ...state, files: action.files, loading: false, error: null };

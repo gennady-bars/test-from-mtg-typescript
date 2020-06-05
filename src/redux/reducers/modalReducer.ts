@@ -5,7 +5,9 @@ const initialState = {
   alert: false,
 };
 
-const modalReducer = (state = initialState, action) => {
+export type InitialStateType = typeof initialState
+
+const modalReducer = (state = initialState, action: any): InitialStateType => {
   switch (action.type) {
     case SET_MODAL_OPEN:
       return { ...state, isOpen: action.isOpen };

@@ -47,7 +47,7 @@ const FAKE_DATABASE = {
 };
 
 export const getFiles = () => {
-  return async (dispatch) => {
+  return async (dispatch: Function) => {
     dispatch(setLoadingFiles());
     try {
       // axios-запрос по какому-то API
@@ -62,8 +62,8 @@ export const getFiles = () => {
   };
 };
 
-export const getContents = (fileName) => {
-  return async (dispatch) => {
+export const getContents = (fileName: string) => {
+  return async (dispatch: Function) => {
     dispatch(setLoadingContents());
 
     try {
@@ -81,19 +81,22 @@ export const getContents = (fileName) => {
   };
 };
 
-export const setLoadingContents = () => {
+export type SetLoadingContentsActionType = {
+  type: typeof SET_LOADING_CONTENTS
+}
+export const setLoadingContents = (): SetLoadingContentsActionType => {
   return { type: SET_LOADING_CONTENTS };
 };
 
-export const getContentsSuccess = (file) => {
+export const getContentsSuccess = (file: any) => {
   return { type: GET_CONTENTS_SUCCESS, file };
 };
 
-export const getContentsError = (error) => {
+export const getContentsError = (error: any) => {
   return { type: GET_CONTENTS_ERROR, error };
 };
 
-export const setFiles = (files) => {
+export const setFiles = (files: Array<object>) => {
   return { type: SET_FILES, files };
 };
 
@@ -101,6 +104,6 @@ export const setLoadingFiles = () => {
   return { type: SET_LOADING_FILES };
 };
 
-export const getFilesError = (error) => {
+export const getFilesError = (error: any) => {
   return { type: GET_FILES_ERROR, error };
 };

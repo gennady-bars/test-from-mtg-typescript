@@ -1,2 +1,2 @@
 # test-from-mtg
-Тест от МТГ
+Тест от МТГ с Typescript 
