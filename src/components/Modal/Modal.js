@@ -1,10 +1,10 @@
 import React from "react";
-import './Modal.css'
+import styles from './Modal.module.css'
 
 const Modal = ({ modalOkClickHandler, modalDismissClickHandler }) => {
 
   return (
-    <div className='Modal'>
+    <div className={styles.Modal}>
       <h3>Нужно показать Alert?</h3>
       <button onClick={modalOkClickHandler}>ОК</button>
       <button onClick={modalDismissClickHandler}>Отмена</button>
