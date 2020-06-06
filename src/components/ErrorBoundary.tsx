@@ -1,11 +1,15 @@
 import React, { Component, Fragment } from "react";
 
-export default class ErrorBoundary extends Component {
+type State = {
+  hasError: boolean
+}
+
+export default class ErrorBoundary extends Component<{}, State> {
   state = {
     hasError: false,
   };
 
-  componentDidCatch(e) {
+  componentDidCatch() {
     this.setState({
       hasError: true,
     });

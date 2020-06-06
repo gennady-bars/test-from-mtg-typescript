@@ -1,7 +1,11 @@
 import React from 'react'
 import styles from './Alert.module.css'
 
-const Alert = ({onCloseAlert}) => {
+type Props = {
+    onCloseAlert: () => void
+}
+
+const Alert: React.FC<Props> = ({onCloseAlert}) => {
     return (
         <div className={styles.Alert}>
             <p>OK</p>

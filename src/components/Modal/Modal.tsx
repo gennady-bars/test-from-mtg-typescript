@@ -1,7 +1,12 @@
 import React from "react";
 import styles from './Modal.module.css'
 
-const Modal = ({ modalOkClickHandler, modalDismissClickHandler }) => {
+type Props = {
+  modalOkClickHandler: () => void
+  modalDismissClickHandler: () => void
+}
+
+const Modal: React.FC<Props> = ({ modalOkClickHandler, modalDismissClickHandler }) => {
 
   return (
     <div className={styles.Modal}>
