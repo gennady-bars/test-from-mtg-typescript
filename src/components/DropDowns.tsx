@@ -1,15 +1,24 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import { connect,  } from "react-redux";
 import FileContents from "./FileContents";
 import { getContents } from "../redux/actions/filesActions";
 import styles from './DropDowns.module.css'
+import { RootStateType } from "../redux/reducers/rootReducer";
 
-class DropDowns extends Component {
+type OtherProps = {
+  url: string,
+  match: any 
+  getContents: typeof getContents
+}
+
+type Props = MapStateToPropsType & OtherProps
+
+class DropDowns extends Component<Props> {
   componentDidMount() {
     this.props.getContents(this.props.match.params.file);
   }
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: Props) {
     if (this.props.match.params.file !== prevProps.match.params.file)
       this.props.getContents(this.props.match.params.file);
   }
@@ -44,7 +53,7 @@ class DropDowns extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: RootStateType) => {
   return {
     files: state.files.files,
     activeFile: state.files.activeFile.file,
@@ -53,4 +62,6 @@ const mapStateToProps = (state) => {
   };
 };
 
+type MapStateToPropsType = ReturnType<typeof mapStateToProps>
+// @ts-ignore
 export default connect(mapStateToProps, { getContents })(DropDowns);

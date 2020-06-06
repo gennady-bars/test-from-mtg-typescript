@@ -3,7 +3,7 @@ import styles from './FileContents.module.css'
 import { FileType } from "../types";
 
 type Props = {
-  activeFile?: FileType, 
+  activeFile: FileType | null | undefined, 
   loading: boolean, 
   error: any
 }

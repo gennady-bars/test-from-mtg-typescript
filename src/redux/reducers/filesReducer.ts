@@ -1,3 +1,4 @@
+import { FileActionTypes } from './../actions/filesActions';
 import { FileType, AddressType } from './../../types';
 import {
   SET_FILES,
@@ -23,7 +24,7 @@ const initialState = {
 
 export type InitialStateType = typeof initialState;
 
-const filesReducer = (state = initialState, action: any): InitialStateType => {
+const filesReducer = (state = initialState, action: FileActionTypes): InitialStateType => {
   switch (action.type) {
     case SET_FILES:
       return { ...state, files: action.files, loading: false, error: null };

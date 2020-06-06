@@ -1,3 +1,4 @@
+import { RootStateType } from './../reducers/rootReducer';
 import { FileType } from './../../types';
 import { Dispatch } from "redux";
 import {
@@ -8,6 +9,7 @@ import {
   GET_CONTENTS_SUCCESS,
   GET_CONTENTS_ERROR,
 } from "./actionTypes";
+import { ThunkAction } from 'redux-thunk';
 
 const FAKE_DATABASE = {
   contents: [
@@ -35,7 +37,7 @@ const FAKE_DATABASE = {
     консультация с широким активом влечет за собой процесс внедрения и
     модернизации дальнейших направлений развития.`,
     },
-  ],
+  ] as Array<FileType>,
   files: [
     {
       id: 1,
@@ -45,11 +47,11 @@ const FAKE_DATABASE = {
       id: 2,
       name: "file2",
     },
-  ],
+  ] as Array<FileType>,
 };
 
-export const getFiles = () => {
-  return async (dispatch: Dispatch) => {
+export const getFiles = (): ThunkAction<Promise<void>, RootStateType, unknown, FileActionTypes> => {
+  return async (dispatch) => {
     dispatch(setLoadingFiles());
     try {
       // axios-запрос по какому-то API
@@ -64,24 +66,28 @@ export const getFiles = () => {
   };
 };
 
-export const getContents = (fileName: string) => {
-  return async (dispatch: Dispatch) => {
+export const getContents = (fileName: string): ThunkAction<Promise<void>, RootStateType, unknown, FileActionTypes> => {
+  return async (dispatch) => {
     dispatch(setLoadingContents());
 
     try {
       // axios-запрос по какому-то API
       // const result = await axios.get(url, body)
-      await new Promise<FileType>((resolve, reject) => {
-        const file = FAKE_DATABASE.contents.find(
-          ({ name }) => name === fileName
-        );
-        setTimeout(() => resolve(file), 1000);
-      }).then((file) => dispatch(getContentsSuccess(file)));
+      const file = FAKE_DATABASE.contents.find(
+        ({ name }) => name === fileName
+      );
+        
+        setTimeout(() => dispatch(getContentsSuccess(file)), 1000);
     } catch (error) {
       dispatch(getContentsError(error.message));
     }
   };
 };
+
+export type FileActionTypes = (SetLoadingContentsActionType | GetContentsSuccessActionType | GetContentsErrorActionType |
+  SetFilesActionType | SetLoadingFilesActionType | GetFilesErrorActionType
+   )
+
 
 type SetLoadingContentsActionType = { type: typeof SET_LOADING_CONTENTS };
 export const setLoadingContents = (): SetLoadingContentsActionType => {
@@ -90,9 +96,9 @@ export const setLoadingContents = (): SetLoadingContentsActionType => {
 
 type GetContentsSuccessActionType = {
   type: typeof GET_CONTENTS_SUCCESS;
-  file: FileType;
+  file?: FileType;
 };
-export const getContentsSuccess = (file: FileType): GetContentsSuccessActionType => {
+export const getContentsSuccess = (file: FileType | undefined): GetContentsSuccessActionType => {
   return { type: GET_CONTENTS_SUCCESS, file };
 }; 
 
