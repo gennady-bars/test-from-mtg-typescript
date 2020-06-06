@@ -7,14 +7,16 @@ import transition from '../transitions/transition.module.css'
 import Modal from "../components/Modal/Modal";
 import Alert from "../components/Modal/Alert";
 import { setAlert, setModal } from "../redux/actions/modalActions";
+import { RootStateType } from "../redux/reducers/rootReducer";
 
-class ModalPage extends Component {
+type Props = {
+  isOpen: boolean, 
+  isShown: boolean, 
+  setModal: typeof setModal, 
+  setAlert: typeof setAlert
+}
 
-  clickHandler = () => {
-    this.setState((prevState) => {
-      return { isOpen: !prevState.isOpen };
-    });
-  };
+class ModalPage extends Component<Props> {
 
   modalOkClickHandler = () => {
     this.props.setModal(false)
@@ -60,7 +62,7 @@ class ModalPage extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: RootStateType) => {
   return {
     isOpen: state.modal.isOpen,
     isShown: state.modal.alert
