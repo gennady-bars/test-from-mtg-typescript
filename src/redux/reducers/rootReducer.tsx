@@ -7,4 +7,8 @@ const rootReducer = combineReducers({
   modal: modalReducer
 });
 
+export type RootReducerType = typeof rootReducer;
+// получаем возвращаемый тип нашего State из rootReducer-a
+export type RootStateType = ReturnType<RootReducerType>
+
 export default rootReducer;
