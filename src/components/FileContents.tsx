@@ -1,7 +1,14 @@
 import React from "react";
 import styles from './FileContents.module.css'
+import { FileType } from "../types";
 
-const FileContents = ({ activeFile, loading, error }) => {
+type Props = {
+  activeFile?: FileType, 
+  loading: boolean, 
+  error: any
+}
+
+const FileContents: React.FC<Props> = ({ activeFile, loading, error }) => {
   const contents = loading
     ? "Loading..."
     : error
