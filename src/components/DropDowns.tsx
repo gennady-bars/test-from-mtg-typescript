@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { connect,  } from "react-redux";
+import { connect } from "react-redux";
 import FileContents from "./FileContents";
 import { getContents } from "../redux/actions/filesActions";
 import styles from './DropDowns.module.css'
 import { RootStateType } from "../redux/reducers/rootReducer";
 
-type OtherProps = {
+type OwnProps = {
   url: string,
-  match: any 
-  getContents: typeof getContents
+  match: any
 }
 
-type Props = MapStateToPropsType & OtherProps
+type Props = MapStateToPropsType & MapDispatchToPropsType & OwnProps
 
 class DropDowns extends Component<Props> {
   componentDidMount() {
@@ -24,7 +23,7 @@ class DropDowns extends Component<Props> {
   }
 
   render() {
-    
+
     const { url, files, activeFile, loading, error } = this.props;
 
     return (
@@ -46,7 +45,7 @@ class DropDowns extends Component<Props> {
             Содержимое файла {activeFile && activeFile.name}
           </button>
 
-          <FileContents {...{activeFile, loading, error}}/>
+          <FileContents {...{ activeFile, loading, error }} />
         </div>
       </div>
     );
@@ -61,7 +60,9 @@ const mapStateToProps = (state: RootStateType) => {
     error: state.files.activeFile.error,
   };
 };
-
 type MapStateToPropsType = ReturnType<typeof mapStateToProps>
+
+type MapDispatchToPropsType = { getContents: typeof getContents }
+
 // @ts-ignore
-export default connect(mapStateToProps, { getContents })(DropDowns);
+export default connect<MapStateToPropsType, MapDispatchToPropsType, OwnProps, RootStateType>(mapStateToProps, { getContents })(DropDowns);

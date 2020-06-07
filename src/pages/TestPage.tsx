@@ -1,11 +1,19 @@
 import React, { Component } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, match } from "react-router-dom";
 import { connect } from "react-redux";
 import styles from  "./TestPage.module.css";
 import DropDowns from "../components/DropDowns";
 import { getFiles } from "../redux/actions/filesActions";
+import { RootStateType } from "../redux/reducers/rootReducer";
 
-class TestPage extends Component {
+type Props = {
+  loading: boolean, 
+  error: any, 
+  match: match,
+  getFiles: typeof getFiles
+}
+
+class TestPage extends Component<Props> {
   componentDidMount() {
     this.props.getFiles();
   }
@@ -37,11 +45,11 @@ class TestPage extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: RootStateType) => {
   return {
     loading: state.files.loading,
     error: state.files.error,
   };
 };
-
+// @ts-ignore
 export default connect(mapStateToProps, { getFiles })(TestPage);

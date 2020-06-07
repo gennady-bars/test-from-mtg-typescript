@@ -1,6 +1,5 @@
 import { RootStateType } from './../reducers/rootReducer';
 import { FileType } from './../../types';
-import { Dispatch } from "redux";
 import {
   SET_FILES,
   SET_LOADING_FILES,
@@ -85,9 +84,7 @@ export const getContents = (fileName: string): ThunkAction<Promise<void>, RootSt
 };
 
 export type FileActionTypes = (SetLoadingContentsActionType | GetContentsSuccessActionType | GetContentsErrorActionType |
-  SetFilesActionType | SetLoadingFilesActionType | GetFilesErrorActionType
-   )
-
+  SetFilesActionType | SetLoadingFilesActionType | GetFilesErrorActionType)
 
 type SetLoadingContentsActionType = { type: typeof SET_LOADING_CONTENTS };
 export const setLoadingContents = (): SetLoadingContentsActionType => {
