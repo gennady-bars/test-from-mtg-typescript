@@ -10,11 +10,9 @@ import { setAlert, setModal } from "../redux/actions/modalActions";
 import { RootStateType } from "../redux/reducers/rootReducer";
 
 type Props = {
-  isOpen: boolean, 
-  isShown: boolean, 
   setModal: typeof setModal, 
   setAlert: typeof setAlert
-}
+} & MapStateToPropsType
 
 class ModalPage extends Component<Props> {
 
@@ -68,5 +66,7 @@ const mapStateToProps = (state: RootStateType) => {
     isShown: state.modal.alert
   };
 };
+
+type MapStateToPropsType = ReturnType<typeof mapStateToProps>
 
 export default connect(mapStateToProps, { setAlert, setModal })(ModalPage);
