@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Switch, Route, Redirect, match } from "react-router-dom";
 import { connect } from "react-redux";
 import styles from  "./TestPage.module.css";
-import DropDowns from "../components/DropDowns";
-import { getFiles } from "../redux/actions/filesActions";
-import { RootStateType } from "../redux/reducers/rootReducer";
+import DropDowns from "../../components/DropDowns/DropDowns";
+import { getFiles } from "../../redux/actions/filesActions";
+import { RootStateType } from "../../redux/reducers/rootReducer";
 
 type Props = {
   loading: boolean, 

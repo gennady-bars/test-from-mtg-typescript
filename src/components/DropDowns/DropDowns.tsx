@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import FileContents from "./FileContents";
-import { getContents } from "../redux/actions/filesActions";
+import FileContents from "../FileContents/FileContents";
+import { getContents } from "../../redux/actions/filesActions";
 import styles from './DropDowns.module.css'
-import { RootStateType } from "../redux/reducers/rootReducer";
+import { RootStateType } from "../../redux/reducers/rootReducer";
 
 type OwnProps = {
   url: string,

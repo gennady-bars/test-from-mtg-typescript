@@ -4,10 +4,10 @@ import { connect } from "react-redux";
 import styles from  "./ModalPage.module.css";
 import transition from '../transitions/transition.module.css'
 
-import Modal from "../components/Modal/Modal";
-import Alert from "../components/Modal/Alert";
-import { setAlert, setModal } from "../redux/actions/modalActions";
-import { RootStateType } from "../redux/reducers/rootReducer";
+import Modal from "../../components/Modal/Modal";
+import Alert from "../../components/Modal/Alert";
+import { setAlert, setModal } from "../../redux/actions/modalActions";
+import { RootStateType } from "../../redux/reducers/rootReducer";
 
 type Props = {
   setModal: typeof setModal, 
