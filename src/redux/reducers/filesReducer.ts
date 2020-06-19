@@ -1,5 +1,5 @@
 import { FileActionTypes } from './../actions/filesActions';
-import { FileType, AddressType } from './../../types';
+import { FileType, ActiveFileType } from './../../types';
 import {
   SET_FILES,
   SET_LOADING_FILES,
@@ -19,7 +19,7 @@ const initialState = {
     loading: false,
     error: null,
     file: null,
-  } as AddressType,
+  } as ActiveFileType,
 };
 
 export type InitialStateType = typeof initialState;

@@ -1,4 +1,5 @@
 import { SET_MODAL_OPEN, SET_ALERT_SHOWN } from "../actions/actionTypes";
+import { ModalActionTypes } from "../actions/modalActions";
 
 const initialState = {
   isOpen: false,
@@ -7,7 +8,7 @@ const initialState = {
 
 export type InitialStateType = typeof initialState
 
-const modalReducer = (state = initialState, action: any): InitialStateType => {
+const modalReducer = (state = initialState, action: ModalActionTypes): InitialStateType => {
   switch (action.type) {
     case SET_MODAL_OPEN:
       return { ...state, isOpen: action.isOpen };

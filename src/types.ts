@@ -1,4 +1,4 @@
-export type AddressType = {
+export type ActiveFileType = {
   loading: boolean;
   error: any;
   file: FileType | null | undefined;

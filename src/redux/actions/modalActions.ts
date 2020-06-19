@@ -1,5 +1,7 @@
 import { SET_MODAL_OPEN, SET_ALERT_SHOWN } from "./actionTypes";
 
+export type ModalActionTypes = SetModalActionType | SetAlertActionType;
+
 type SetModalActionType = { type: typeof SET_MODAL_OPEN; isOpen: boolean };
 export const setModal = (isOpen: boolean): SetModalActionType => {
   return {
