@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/test-from-mtg-typescript/static/css/main.985f83d8.chunk.css",
-    "main.js": "/test-from-mtg-typescript/static/js/main.4e1ece5a.chunk.js",
-    "main.js.map": "/test-from-mtg-typescript/static/js/main.4e1ece5a.chunk.js.map",
-    "runtime-main.js": "/test-from-mtg-typescript/static/js/runtime-main.c25732f2.js",
-    "runtime-main.js.map": "/test-from-mtg-typescript/static/js/runtime-main.c25732f2.js.map",
-    "static/js/2.dd87ccaa.chunk.js": "/test-from-mtg-typescript/static/js/2.dd87ccaa.chunk.js",
-    "static/js/2.dd87ccaa.chunk.js.map": "/test-from-mtg-typescript/static/js/2.dd87ccaa.chunk.js.map",
-    "index.html": "/test-from-mtg-typescript/index.html",
-    "precache-manifest.30bcc91bb020a9f9854c6bae388da062.js": "/test-from-mtg-typescript/precache-manifest.30bcc91bb020a9f9854c6bae388da062.js",
-    "service-worker.js": "/test-from-mtg-typescript/service-worker.js",
-    "static/css/main.985f83d8.chunk.css.map": "/test-from-mtg-typescript/static/css/main.985f83d8.chunk.css.map",
-    "static/js/2.dd87ccaa.chunk.js.LICENSE.txt": "/test-from-mtg-typescript/static/js/2.dd87ccaa.chunk.js.LICENSE.txt"
+    "main.css": "./static/css/main.985f83d8.chunk.css",
+    "main.js": "./static/js/main.4e1ece5a.chunk.js",
+    "main.js.map": "./static/js/main.4e1ece5a.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.3f992b37.js",
+    "runtime-main.js.map": "./static/js/runtime-main.3f992b37.js.map",
+    "static/js/2.dd87ccaa.chunk.js": "./static/js/2.dd87ccaa.chunk.js",
+    "static/js/2.dd87ccaa.chunk.js.map": "./static/js/2.dd87ccaa.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.2c6cce739d0dd6ccf3e858560a3b36c8.js": "./precache-manifest.2c6cce739d0dd6ccf3e858560a3b36c8.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.985f83d8.chunk.css.map": "./static/css/main.985f83d8.chunk.css.map",
+    "static/js/2.dd87ccaa.chunk.js.LICENSE.txt": "./static/js/2.dd87ccaa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c25732f2.js",
+    "static/js/runtime-main.3f992b37.js",
     "static/js/2.dd87ccaa.chunk.js",
     "static/css/main.985f83d8.chunk.css",
     "static/js/main.4e1ece5a.chunk.js"
